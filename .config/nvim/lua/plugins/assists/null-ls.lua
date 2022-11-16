@@ -8,11 +8,22 @@ null_ls.setup({
         new_client.offset_encoding = "utf-16"
     end,
     sources = {
+        -- base
         null_ls.builtins.completion.tags,
         null_ls.builtins.completion.luasnip,
+
+        -- c++ & cmake
         null_ls.builtins.diagnostics.clang_check,
+        null_ls.builtins.formatting.clang_format,
         null_ls.builtins.diagnostics.cmake_lint,
-        null_ls.builtins.diagnostics.eslint,
-        null_ls.builtins.code_actions.eslint,
+
+        -- verilog
+        null_ls.builtins.formatting.verible_verilog_format,
+
+        -- TypeScript & JavaScript
+        null_ls.builtins.diagnostics.tsc,
+        null_ls.builtins.diagnostics.eslint_d,
+        null_ls.builtins.code_actions.eslint_d,
+
     }
 })
