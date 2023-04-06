@@ -3,31 +3,34 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 -- base
-keymap.set("n", "x", '"_x"')
+keymap.set("n", "x", '"_x')
+keymap.set("n", "dw", 'bn"_d')
+keymap.set("n", "<C-a>", "gg<S-v>G")
 
--- numbers
-keymap.set("n", "<leader>+", "<C-a>")
-keymap.set("n", "<leader>-", "<C-x>")
+-- crementols
+keymap.set("n", "+", "<C-a>")
+keymap.set("n", "-", "<C-x>")
 
 -- splitting
-keymap.set("n", "<leader>sv", "<C-w>v")
-keymap.set("n", "<leader>sh", "<C-w>s")
-keymap.set("n", "<leader>se", "<C-w>=")
-keymap.set("n", "<leader>ss", "<cmd>close<CR>")
+keymap.set("n", "_", ":split<CR><C-w>w", { silent = true })
+keymap.set("n", "|", ":vsplit<CR><C-w>w", { silent = true })
+keymap.set("n", "aa", "<cmd>close<CR>")
+
+-- movement
+keymap.set("", "a<left>", "<C-w>h")
+keymap.set("", "ah", "<C-w>h")
+keymap.set("", "a<up>", "<C-w>k")
+keymap.set("", "ak", "<C-w>k")
+keymap.set("", "a<down>", "<C-w>j")
+keymap.set("", "aj", "<C-w>j")
+keymap.set("", "a<right>", "<C-w>l")
+keymap.set("", "al", "<C-w>l")
 
 -- buffers
-keymap.set("n", "<leader>c", "<cmd>enew<CR>")
+keymap.set("n", "<leader>c", "<cmd>tabedit<CR>", { silent = true })
 keymap.set("n", "<leader>l", "<cmd>bnext<CR>")
 keymap.set("n", "<leader>h", "<cmd>bprevious<CR>")
 keymap.set("n", "<leader>bb", "<cmd>bp <bar> bd #<CR>")
 
--- nvim-tree
-keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>")
-
 -- telescope
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<CR>")
-keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<CR>")
-keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
-keymap.set("n", "<leader>fn", "<cmd>Telescope help_tags<CR>")
 

@@ -17,9 +17,6 @@ null_ls.setup({
         null_ls.builtins.formatting.clang_format,
         null_ls.builtins.diagnostics.cmake_lint,
 
-        -- verilog
-        null_ls.builtins.formatting.verible_verilog_format,
-
         -- TypeScript & JavaScript
         null_ls.builtins.diagnostics.tsc,
         null_ls.builtins.diagnostics.eslint_d,

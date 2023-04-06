@@ -2,7 +2,7 @@
 *
 
 # Neovim
-!.config/nvim/
+!.config/nvim/**/*.lua
 
 # Zsh
 !.zshrc
@@ -15,8 +15,3 @@
 !.tmux
 !.tmux.conf
 !.tmux/*.yml
-
-# Setups
-!install.sh
-!pkgs/
-

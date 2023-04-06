@@ -9,10 +9,10 @@ local colors = {
     innerbg = nil,
     outerbg = "#16161D",
     normal = "#afd7af",
-    insert = "#5fafd7",
-    visual = "#c678dd",
-    replace = "#e46876",
-    command = "#cab092",
+    insert = "#8aadf4",
+    visual = "#f5bde6",
+    replace = "#b7bdf8",
+    command = "#fab387",
 }
 
 local theme = {
@@ -50,7 +50,8 @@ local theme = {
 
 lualine.setup({
     options = {
-        theme = theme
-    },
-    extensions = { "nvim-tree" }
+        theme = theme,
+        component_separators = { left = '', right = ''},
+        section_separators = { left = '', right = ''},
+    }
 })

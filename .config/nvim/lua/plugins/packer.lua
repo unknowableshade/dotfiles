@@ -23,56 +23,55 @@ return require("packer").startup(function(use)
 
     -- dependencies
     use("nvim-lua/plenary.nvim")
+    use("nvim-tree/nvim-web-devicons")
 
-    -- style
+    -- styling
     use({ "catppuccin/nvim", as = "catppuccin" })
     use("lukas-reineke/indent-blankline.nvim")
-    use("nvim-tree/nvim-web-devicons")
     use("xiyaowong/nvim-transparent")
 
-    -- exploring
-    use("nvim-tree/nvim-tree.lua")
-    use({
-        "nvim-telescope/telescope-fzf-native.nvim",
-        run = "make"
-    })
+    -- exploring 
     use({
         "nvim-telescope/telescope.nvim",
-        branch = "0.1.x"
+        branch = "0.1.1"
+    })
+    use({
+        "nvim-telescope/telescope-fzf-native.nvim",
+        run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+        after = "telescope.nvim"
+    })
+    use({
+        "nvim-telescope/telescope-file-browser.nvim"
     })
 
-    -- autocompletion
+    -- assistance
+    -- -- autocompletion
     use("hrsh7th/nvim-cmp")
     use("hrsh7th/cmp-buffer")
     use("hrsh7th/cmp-path")
 
-    -- snippets
-    use("L3MON4D3/LuaSnip")
+    -- -- snippets
+    use({
+        "L3MON4D3/LuaSnip",
+	    tag = "v1.2.*",
+    })
     use("saadparwaiz1/cmp_luasnip")
 
-    -- lsp
+    -- -- lsp
     use("williamboman/mason.nvim")
     use("williamboman/mason-lspconfig.nvim")
 
     use("neovim/nvim-lspconfig")
-    use("p00f/clangd_extensions.nvim")
     use("hrsh7th/cmp-nvim-lsp")
     use({ "glepnir/lspsaga.nvim", branch = "main" })
-    use("onsails/lspkind.nvim")
 
     use("jose-elias-alvarez/null-ls.nvim")
 
-    -- automation
-    use("windwp/nvim-autopairs")
-    use({
-        "windwp/nvim-ts-autotag",
-        after = "nvim-treesitter"
-    })
+    use("p00f/clangd_extensions.nvim")
 
-    -- utils
+    -- utilities
     use("nvim-lualine/lualine.nvim")
     use({ "akinsho/bufferline.nvim", tag = "v3.*" })
-    use("j-hui/fidget.nvim")
     use({
         "nvim-treesitter/nvim-treesitter",
         run = function()
@@ -80,10 +79,16 @@ return require("packer").startup(function(use)
             ts_update()
         end,
     })
-    use("rcarriga/nvim-notify")
     use({
         "lewis6991/gitsigns.nvim",
-        tag = "release"
+        tag = "v0.6"
+    })
+    use({
+        "folke/noice.nvim",
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        }
     })
 
     if packer_bootstrap then

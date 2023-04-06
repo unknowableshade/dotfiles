@@ -16,12 +16,6 @@ local opts = {
         separator_style = "thin",
         offsets = {
             {
-                filetype = "NvimTree",
-                text = "File Explorer",
-                text_align = "center",
-                padding = 1,
-            },
-            {
                 filetype = "undotree",
                 text = "Undo Tree",
                 text_align = "center",
