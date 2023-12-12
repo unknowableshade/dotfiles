@@ -1,0 +1,24 @@
+# ignore everything by default.
+*
+
+!.config/
+.config/*
+
+# Neovim
+!.config/nvim
+.config/nvim/**
+!.config/nvim/**/*
+
+# Fish
+!.config/fish
+.config/fish/**
+!.config/fish/**/*
+
+# Git
+!.gitconfig
+!.gitignore
+
+# Tmux
+!.tmux
+!.tmux.conf
+!.tmux/*.yml
