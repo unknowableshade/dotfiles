@@ -1,14 +1,14 @@
+[core]
+  editor = nvim
+  ignorecase = false
 [user]
-	name = Vladimir (unknowableshade) Eremin
-	email = 60275123+unknowableshade@users.noreply.github.com
+  name = Vladimir Eremin
+  email = personal@ermnvldmr.com 
 [credential]
-    helper = /mnt/c/Development/Git/mingw64/bin/git-credential-manager.exe
-[credential "https://dev.azure.com"]
-	useHttpPath = true
-[credential "https://www.kgeorgiy.info"]
-	provider = generic
+  helper = /mnt/c/Development/Git/mingw64/bin/git-credential-manager.exe
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+

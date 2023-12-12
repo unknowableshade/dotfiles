@@ -1,11 +1,18 @@
 # ignore everything by default.
 *
 
-# Neovim
-!.config/nvim/**/*.lua
+!.config/
+.config/*
 
-# Zsh
-!.zshrc
+# Neovim
+!.config/nvim
+.config/nvim/**
+!.config/nvim/**/*
+
+# Fish
+!.config/fish
+.config/fish/**
+!.config/fish/**/*
 
 # Git
 !.gitconfig
