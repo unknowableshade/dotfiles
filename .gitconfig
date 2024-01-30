@@ -1,14 +1,13 @@
+[include]
+  path = ~/.gitconfig.local
 [core]
   editor = nvim
   ignorecase = false
 [user]
   name = Vladimir Eremin
   email = personal@ermnvldmr.com 
-[credential]
-  helper = /mnt/c/Development/Git/mingw64/bin/git-credential-manager.exe
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
-

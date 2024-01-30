@@ -15,23 +15,19 @@ keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
 
 -- windows
-keymap.set("n", "w-", "<cmd>split<CR><C-w>w", opts)
-keymap.set("n", "w\\", "<cmd>vsplit<CR><C-w>w", opts)
+keymap.set("n", "<Leader>-", "<cmd>split<CR><C-w>j", opts)
+keymap.set("n", "<Leader>\\", "<cmd>vsplit<CR><C-w>l", opts)
 
-keymap.set("n", "ww", "<cmd>close<CR>")
+keymap.set("n", "<C-h>", "<C-w>h")
+keymap.set("n", "<C-j>", "<C-w>j")
+keymap.set("n", "<C-k>", "<C-w>k")
+keymap.set("n", "<C-l>", "<C-w>l")
 
-keymap.set("n", "wh", "<C-w>h")
-keymap.set("n", "wj", "<C-w>j")
-keymap.set("n", "wk", "<C-w>k")
-keymap.set("n", "wl", "<C-w>l")
-
-keymap.set("n", "<C-w><left>", "<C-w>>")
-keymap.set("n", "<C-w><up>", "<C-w>+")
-keymap.set("n", "<C-w><down>", "<C-w>-")
-keymap.set("n", "<C-w><right>", "<C-w>>")
+keymap.set("n", "<C-M-h>", "<C-w><")
+keymap.set("n", "<C-M-j>", "<C-w>+")
+keymap.set("n", "<C-M-k>", "<C-w>-")
+keymap.set("n", "<C-M-l>", "<C-w>>")
 
 -- tabs
-keymap.set("n", "tc", "<cmd>tabedit<CR>", opts)
 keymap.set("n", "<tab>", "<cmd>tabnext<CR>")
 keymap.set("n", "<s-tab>", "<cmd>tabprev<CR>")
-keymap.set("n", "tt", "<cmd>bd<CR>")
